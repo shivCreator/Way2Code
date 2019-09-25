@@ -1,3 +1,3 @@
 # hello-world
-Repository for fun projects-beginners
-It a commit to learn to commit with commitment(not really)
+This repository contains some simple projects that I will be making as I learn more and more programming.
+The repository basically shows how much I know in programming so far
