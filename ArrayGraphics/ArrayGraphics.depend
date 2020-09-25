@@ -1,0 +1,29 @@
+# depslib dependency file v1.0
+1273701213 source:c:\users\laxmi coputer\desktop\arraygraphics\main.cpp
+	"ArrayWindow.h"
+
+1272633918 source:c:\users\laxmi coputer\desktop\arraygraphics\entity.cpp
+	"entity.h"
+	<iostream>
+	<process.h>
+	<stdlib.h>
+	<windows.h>
+
+1272633918 c:\users\laxmi coputer\desktop\arraygraphics\entity.h
+
+1273701254 c:\users\laxmi coputer\desktop\arraygraphics\arraywindow.h
+	"entity.h"
+	"RectangleShape.h"
+
+1273701436 source:c:\users\laxmi coputer\desktop\arraygraphics\arraywindow.cpp
+	"ArrayWindow.h"
+	<iostream>
+	<windows.h>
+	<string.h>
+
+1534919272 source:c:\users\laxmi coputer\desktop\arraygraphics\rectangleshape.cpp
+	"RectangleShape.h"
+
+1272633918 c:\users\laxmi coputer\desktop\arraygraphics\rectangleshape.h
+	"entity.h"
+
