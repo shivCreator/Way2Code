@@ -88,3 +88,8 @@ void print_tree(int tree[], int size, int TH){
 	  children++;
 	}
 }
+
+// clear console using ascii escape sequences
+void clear(){
+    printf("\033[2J\033[1;1H");
+}
