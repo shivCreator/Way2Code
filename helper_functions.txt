@@ -1,0 +1,88 @@
+--------------------------------------
+// height(4) tree
+
+/*
+* TH = 3 // contant height of the tree
+* (a,b):(height, level)
+* level = TH - height
+* k(height) = 2^(height+1) - 2, height = 0, 1, 2,... (from bottom to top)
+* n = 2^level = number of children, level = 0, 1, 2, ... (from top to bottom)
+*/
+
+=>=>=>=>=>=>=>00											(3, 0)(TH, 0)	=== 14*sp + 1*[(elem) +  30*sp] 
+=>=>=>_/=>=>=>=>=>=>=>\_
+=>=>=>01=>=>=>=>=>=>=>02							(2, 1)				===  6*sp + 2*[(elem) + 14*sp]
+=>_/=>=>=>\_=>=>=>_/=>=>=>\_     
+=>03=>=>=>04=>=>=>05=>=>=>06					(1, 2)				===  2*sp + 4*[(elem) +  6*sp] 
+_/=>\_=>_/=>\_=>_/=>\_=>_/=>\_  
+07=>08=>09=>10=>11=>12=>13=>14				(0, 3)				===  0*sp + 8*[(elem) +  2*sp]	
+
+
+=== k(height)*sp + n*[(elem) + k(height+1)*sp]
+=== (2^(height+1) - 2)*sp + 2^level*[(elem) + (2^(height+2) - 2)*sp]
+=== (2^(height+1) - 2)*sp + 2^( TH-height )*[ (elem) + ( 2^(height+2) - 2 )*sp ]
+
+
+
+algo:
+tree = [...];
+size = total no of children in tree
+
+void print_spaces(int n)
+{
+	for(int i = 0; i < n; i++)
+	{
+	  cout << " ";
+	}
+}
+
+void print_tree(int tree[], int size, int TH){
+
+  bool is_proper_level = true;
+  bool is_left_branch = true;
+
+	int height = TH;
+	
+	// indent root-node
+	print_spaces( pow(2, height+1) - 2 );
+	int i = 0, children = 0;
+	while( i < size)
+	{
+		// current level is completely filled
+	  if( children >= pow(2, TH-height) )
+	  {
+	    // update states
+	    is_proper_level = !is_proper_level;
+	    if(is_proper_level == false) height--;
+	    children = 0;
+	    
+	    
+	    
+	    // move to next line
+	    cout << endl;
+	    
+	    // indent next level
+	    print_spaces( pow(2, height+1) - 2 );
+	  }
+	  
+	
+	// algo-implementation
+	
+		if(is_proper_level)
+		{	
+	 		if(tree[i] < 10) cout << "0";
+	 		 
+	 		cout << tree[i++];
+	  }
+	  else
+	  {
+	  	if(is_left_branch) cout << "_/";
+	  	else cout << "\\_";
+	  	is_left_branch = !is_left_branch;
+	  }
+	  
+	  print_spaces( pow(2, height+2) - 2 );
+	  
+	  children++;
+	}
+}
