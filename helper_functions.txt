@@ -9,13 +9,13 @@
 * n = 2^level = number of children, level = 0, 1, 2, ... (from top to bottom)
 */
 
-=>=>=>=>=>=>=>00											(3, 0)(TH, 0)	=== 14*sp + 1*[(elem) +  30*sp] 
+=>=>=>=>=>=>=>00			(3, 0)(TH, 0)	=== 14*sp + 1*[(elem) +  30*sp] 
 =>=>=>_/=>=>=>=>=>=>=>\_
-=>=>=>01=>=>=>=>=>=>=>02							(2, 1)				===  6*sp + 2*[(elem) + 14*sp]
+=>=>=>01=>=>=>=>=>=>=>02		(2, 1)		===  6*sp + 2*[(elem) + 14*sp]
 =>_/=>=>=>\_=>=>=>_/=>=>=>\_     
-=>03=>=>=>04=>=>=>05=>=>=>06					(1, 2)				===  2*sp + 4*[(elem) +  6*sp] 
+=>03=>=>=>04=>=>=>05=>=>=>06		(1, 2)		===  2*sp + 4*[(elem) +  6*sp] 
 _/=>\_=>_/=>\_=>_/=>\_=>_/=>\_  
-07=>08=>09=>10=>11=>12=>13=>14				(0, 3)				===  0*sp + 8*[(elem) +  2*sp]	
+07=>08=>09=>10=>11=>12=>13=>14		(0, 3)		===  0*sp + 8*[(elem) +  2*sp]	
 
 
 === k(height)*sp + n*[(elem) + k(height+1)*sp]
@@ -28,6 +28,7 @@ algo:
 tree = [...];
 size = total no of children in tree
 
+// simply prints n spaces
 void print_spaces(int n)
 {
 	for(int i = 0; i < n; i++)
@@ -36,6 +37,7 @@ void print_spaces(int n)
 	}
 }
 
+// prints a binary tree with node-values < 100
 void print_tree(int tree[], int size, int TH){
 
   bool is_proper_level = true;
